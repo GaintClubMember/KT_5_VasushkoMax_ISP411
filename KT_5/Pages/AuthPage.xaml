@@ -9,8 +9,17 @@
       Title="ИС по прокату спортивного инвентаря - Авторизация">
 
     <Grid>
-        
-        
+
+        <Grid HorizontalAlignment="Center">
+            <StackPanel Width="300">
+                <Label Content="Авторизация" HorizontalAlignment="Center" FontSize="30" Height="50"></Label>
+                <Label x:Name="loginLabel" Content="Логин:" Margin="0,30,0,0"></Label>
+                <TextBox x:Name="loginBox" Width="300"></TextBox>
+                <Label x:Name="passwordlabel" Content="Пароль:"></Label>
+                <PasswordBox x:Name="passwordBox" Width="300"></PasswordBox>
+                <Button x:Name="applyBtn" Click="applyBtn_Click" Margin="20" Width="200" Content="Подтвердить"></Button>
+            </StackPanel>
+        </Grid>
         
     </Grid>
 </Page>
