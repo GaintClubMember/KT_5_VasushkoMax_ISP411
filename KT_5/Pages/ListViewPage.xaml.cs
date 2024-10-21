@@ -24,5 +24,10 @@ namespace KT_5.Pages
         {
             InitializeComponent();
         }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
