@@ -9,6 +9,6 @@ namespace KT_5.Classes
 {
     internal class Manager
     {
-        private static Frame frameHelper {  get; set; }
+        public static Frame frameHelper { get; set; }
     }
 }

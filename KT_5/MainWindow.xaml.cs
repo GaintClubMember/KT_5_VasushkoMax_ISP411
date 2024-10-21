@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KT_5.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace KT_5
         public MainWindow()
         {
             InitializeComponent();
+            initFrameContainer();
+            
+
+        }
+
+        private void initFrameContainer()
+        {
+            Classes.Manager.frameHelper = frameContainer;
+            Classes.Manager.frameHelper.Navigate(new Pages.AuthPage());
         }
     }
 }
