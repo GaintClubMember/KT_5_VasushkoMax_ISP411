@@ -5,27 +5,61 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KT_5.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="540" d:DesignWidth="900"
       Title="AddPage">
 
     <Grid>
-        <Grid>
+        <Grid HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
-                
+                <Label Content="ID:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Фамилия:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Имя:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Отчество:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Должность:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Дата рождения:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Телефон:" HorizontalAlignment="Right" Margin="7"></Label>
             </StackPanel>
-
             <StackPanel Grid.Column="1">
+                <TextBox x:Name="idBlock" Text="{Binding id}" Width="200" Margin="7" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+                <TextBox x:Name="lastnameBox" Width="200" Margin="7"></TextBox>
+                <TextBox x:Name="nameBox" Width="200" Margin="7"></TextBox>
+                <TextBox x:Name="patronymicBox" Width="200" Margin="7"></TextBox>
+                <ComboBox x:Name="roleComboBox" DisplayMemberPath="name" SelectedValuePath="id" Width="200" Margin="7"></ComboBox>
+                <TextBox x:Name="birthBox" Width="200" Margin="7"></TextBox>
+                <TextBox x:Name="phoneBox" Width="200" Margin="7"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <Label Content="Пол:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Email:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Логин:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Пароль:" HorizontalAlignment="Right" Margin="7"></Label>
+                <Label Content="Повтор пароля:" HorizontalAlignment="Right" Margin="7"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+                <ComboBox x:Name="genderComboBox" Width="200" Margin="7" DisplayMemberPath="name" SelectedValuePath="id"></ComboBox>
+                <TextBox x:Name="emailBox" Width="200" Margin="7"></TextBox>
+                <TextBox x:Name="loginBox" Width="200" Margin="7"></TextBox>
+                <PasswordBox x:Name="passwordBox1" Width="200" Margin="7"></PasswordBox>
+                <PasswordBox x:Name="passwordBox2" Width="200" Margin="7"></PasswordBox>
 
             </StackPanel>
+
+
+            <Button Grid.Row="1" Grid.Column="3" Content="Добавить" x:Name="addBtn" Click="addBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Button>
+            <Button Grid.Row="1" Grid.Column="0" Content="Назад" x:Name="backBtn" Click="backBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,0,0,0"></Button>
+
 
         </Grid>
         
