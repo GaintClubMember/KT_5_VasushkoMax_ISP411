@@ -39,13 +39,25 @@ namespace KT_5.Pages
 
                 if (Data.KT5_Entities.GetContext().Users.Any(d => d.login == login && d.password == password) == true)
                 {
-                    if (user.Roles.name == "Менеджер") // replace with switch constrcution cuz this is weird and ugly
+                    MessageBox.Show($"{user.login} | {user.password} | {user.Roles.name}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    if (user.Roles.name == "Менеджер") 
                     {
-                        Classes.Manager.frameHelper.Navigate(new Pages.ListViewPage()); // also replace depending on role of user
-
+                        MessageBox.Show($"MANAGWEER", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Classes.Manager.frameHelper.Navigate(new Pages.ListViewPage());
                     }
-                    // add all last roles
-
+                    if(user.Roles.name == "Администратор")
+                    {
+                        Classes.Manager.frameHelper.Navigate(new Pages.ListViewPage());
+                    }
+                    if(user.Roles.name == "Исполнитель")
+                    {
+                        Classes.Manager.frameHelper.Navigate(new Pages.ListViewPage());
+                    }
+                    else
+                    {
+                        Classes.Manager.frameHelper.Navigate(new Pages.ListViewPage());
+                    }
                 }
                 else
                 {

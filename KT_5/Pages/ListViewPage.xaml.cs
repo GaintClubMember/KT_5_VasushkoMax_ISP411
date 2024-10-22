@@ -23,7 +23,10 @@ namespace KT_5.Pages
         public ListViewPage()
         {
             InitializeComponent();
+
+            listView.ItemsSource = Data.KT5_Entities.GetContext().Users;
         }
+
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {

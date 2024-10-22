@@ -15,7 +15,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
-            <ListView Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="500" Width="800">
+            <ListView x:Name="listView" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="500" Width="800">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -32,19 +32,19 @@
                                         <ColumnDefinition></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Grid.Column="0" x:Name="lastnamelabel"></Label>
-                                    <Label Grid.Column="1" x:Name="namelabel"></Label>
-                                    <Label Grid.Column="2" x:Name="patronymiclabel"></Label>
+                                    <Label Grid.Column="0" x:Name="lastnamelabel" Content="{Binding lastname}"></Label>
+                                    <Label Grid.Column="1" x:Name="namelabel" Content="{Binding name}"></Label>
+                                    <Label Grid.Column="2" x:Name="patronymiclabel" Content="{Binding patronymic}"></Label>
                                 </Grid>
 
-                                <Label x:Name="emailLabel" HorizontalAlignment="Center"></Label>
-                                <Label x:Name="birthLabel" HorizontalAlignment="Center"></Label>
-                                <Label x:Name="phoneLabel" HorizontalAlignment="Center"></Label>
+                                <Label x:Name="emailLabel" HorizontalAlignment="Center" Content="{Binding email}"></Label>
+                                <Label x:Name="birthLabel" HorizontalAlignment="Center" Content="{Binding birth}"></Label>
+                                <Label x:Name="phoneLabel" HorizontalAlignment="Center" Content="{Binding phone}"></Label>
 
 
                             </StackPanel>
 
-                            <Label Grid.Column="1" x:Name="roleLabel" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,200,0"></Label>
+                            <Label Grid.Column="1" x:Name="roleLabel" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,200,0" Content="{Binding Roles.name}"></Label>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
