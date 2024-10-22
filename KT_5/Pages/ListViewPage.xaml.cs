@@ -1,5 +1,4 @@
-﻿using KT_5.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,25 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KT_5
+namespace KT_5.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ListViewPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ListViewPage : Page
     {
-        public MainWindow()
+        public ListViewPage()
         {
             InitializeComponent();
-            initFrameContainer();
-            
-
         }
 
-        private void initFrameContainer()
+        private void backBtn_Click(object sender, RoutedEventArgs e)
         {
-            Classes.Manager.frameHelper = frameContainer;
-            Classes.Manager.frameHelper.Navigate(new Pages.AuthPage());
+
         }
     }
 }

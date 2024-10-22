@@ -5,10 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KT_5"
         mc:Ignorable="d"
+        Icon="/Resources/logo.ico"
         Title="{Binding ElementName=frameContainer, Path=Content.Title}" Height="600" Width="800">
     <Grid>
 
-        <Frame x:Name="frameContainer"></Frame>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Source="/Resources/logo.png"></Image>
+                <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" Content="ИС по прокату спортивного инвентаря" Grid.ColumnSpan="2"></Label>
+            </Grid>
+            <Frame Grid.Row="1" x:Name="frameContainer" NavigationUIVisibility="Hidden"></Frame>
+
+        </Grid>
         
     </Grid>
 </Window>
