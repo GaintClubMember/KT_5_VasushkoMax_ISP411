@@ -28,12 +28,45 @@ namespace KT_5.Pages
 
         private void loadListView()
         {
-            listView.ItemsSource = Data.KT5_Entities.GetContext().Users.ToList();
+            try
+            {
+                listView.ItemsSource = Data.KT5_Entities.GetContext().Users.ToList();
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (Classes.Manager.frameHelper.CanGoBack == true)
+                {
+                    Classes.Manager.frameHelper.GoBack();
+                }
+                else
+                {
+                    MessageBox.Show("Невозможно вернуться назад", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
+        }
 
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Classes.Manager.frameHelper.Navigate(new Pages.AddPage());
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
     }
 }

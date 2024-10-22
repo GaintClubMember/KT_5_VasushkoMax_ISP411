@@ -21,10 +21,10 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <StackPanel Grid.Column="0">
+                            <StackPanel Grid.Column="0" Background="White">
                                 <Grid HorizontalAlignment="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition></ColumnDefinition>
@@ -38,17 +38,18 @@
                                 </Grid>
 
                                 <Label x:Name="emailLabel" HorizontalAlignment="Center" Content="{Binding email}"></Label>
-                                <Label x:Name="birthLabel" HorizontalAlignment="Center" Content="{Binding birth}"></Label>
+                                <Label x:Name="birthLabel" HorizontalAlignment="Center" Content="{Binding BirthDate}"></Label>
                                 <Label x:Name="phoneLabel" HorizontalAlignment="Center" Content="{Binding phone}"></Label>
 
 
                             </StackPanel>
 
-                            <Label Grid.Column="1" x:Name="roleLabel" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,200,0" Content="{Binding Roles.name}"></Label>
+                            <Label  Grid.Column="1" x:Name="roleLabel" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding Roles.name}"></Label>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Grid.Row="1" Content="Добавить" x:Name="addBtn" Click="addBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Button>
             <Button Grid.Row="1" Content="Назад" x:Name="backBtn" Click="backBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,0,0,0"></Button>
         </Grid>
         

@@ -24,6 +24,8 @@ namespace KT_5.Pages
         public AuthPage()
         {
             InitializeComponent();
+            loginBox.Text = "akimovya";
+            passwordBox.Password = "bn069Caj";
         }
 
         private void checkAuthData()
@@ -39,11 +41,8 @@ namespace KT_5.Pages
 
                 if (Data.KT5_Entities.GetContext().Users.Any(d => d.login == login && d.password == password) == true)
                 {
-                    MessageBox.Show($"{user.login} | {user.password} | {user.Roles.name}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-
                     if (user.Roles.name == "Менеджер") 
                     {
-                        MessageBox.Show($"MANAGWEER", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                         Classes.Manager.frameHelper.Navigate(new Pages.ListViewPage());
                     }
                     if(user.Roles.name == "Администратор")
@@ -73,7 +72,14 @@ namespace KT_5.Pages
 
         private void applyBtn_Click(object sender, RoutedEventArgs e)
         {
-            checkAuthData();
+            try
+            {
+                checkAuthData();
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
     }
 }
