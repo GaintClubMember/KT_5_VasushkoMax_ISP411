@@ -23,10 +23,13 @@ namespace KT_5.Pages
         public ListViewPage()
         {
             InitializeComponent();
-
-            listView.ItemsSource = Data.KT5_Entities.GetContext().Users;
+            loadListView();
         }
 
+        private void loadListView()
+        {
+            listView.ItemsSource = Data.KT5_Entities.GetContext().Users.ToList();
+        }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
